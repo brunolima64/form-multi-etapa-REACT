@@ -16,11 +16,13 @@ export const Step3 = () => {
     }, []);
 
     const handleNext = () => {
-        if(emailField && githubField) {
+        if((emailField !== '' && emailField.includes('@')) && githubField) {
             ctx?.setEmail(emailField);
             ctx?.setGithub(githubField);
             ctx?.setStep(4)
             navigate('/step4')
+        } else {
+            alert('Campo email não é válido!')
         }
     }
     const handlePrev = () => {
@@ -36,7 +38,7 @@ export const Step3 = () => {
 
             <p>Qual o seu e-mail?</p>
             <C.Input  
-                type='text' 
+                type='email' 
                 value={emailField}
                 onChange={(e)=> setEmailField(e.target.value)} 
             />
