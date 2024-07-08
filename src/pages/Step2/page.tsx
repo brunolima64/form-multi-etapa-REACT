@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import * as C from './styles';
 import { useContext, useEffect, useState } from 'react';
 import { InfoContext } from '../../contexts/InfoContext';
